@@ -50,4 +50,10 @@ function time (a,b = '00',c = '00') {
 console.log (`${a}:${b}:${c}`);
     }
 }
-time (12);
+time (12,15,10);
+
+function seconds (a,b,c) {
+    return a*60+b*60+c;
+}
+let result__11 = seconds (3,20,10);
+console.log (result__11);
