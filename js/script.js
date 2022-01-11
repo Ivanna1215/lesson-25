@@ -92,5 +92,5 @@ else if (sec<60) {
     return `Your time 00:00:${sec}`
 }
 }
-let res2228 = getTime (100)
+let res2228 = getTime (155)
 console.log (res2228);
