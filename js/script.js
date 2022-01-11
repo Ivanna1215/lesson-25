@@ -68,5 +68,29 @@ function pow (a,b) {
         return a**b;
     }
 }
-let res1101 = pow (3,-5);
+let res1101 = pow (1,5);
 console.log (res1101);
+
+function getTime (sec) {
+    if (sec=>3600) {
+        let hour = Math.floor (sec/3600);
+        let hour_sec = hour*3600;
+        let min =Math.floor ((sec-hour_sec)/60);
+        let min_sec = min*60;
+        let s = sec - hour_sec-min_sec;
+        return `Your time ${hour}:${min}:${s}`;
+    }
+else if (sec=>60) {
+    let min = Math.floor (sec/60);
+    return `Your time 00:${min}:${sec-min*60}`;
+}
+else if (sec<=0){
+    return "error";
+}
+
+else if (sec<60) {
+    return `Your time 00:00:${sec}`
+}
+}
+let res2228 = getTime (100)
+console.log (res2228);
