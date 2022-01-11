@@ -41,19 +41,32 @@ for(let i = a;i<b;i++ ) {
 getAllPerfectNums (3,50);
 
 function time (a,b = '00',c = '00') {
-  
-    if (b===0) {
-        console.log (`${a}:00:${c}`);
-    } else if (c===0) {
-        console.log (`${a}:${b}:00;`);
-    } else {
 console.log (`${a}:${b}:${c}`);
-    }
 }
 time (12,15,10);
 
 function seconds (a,b,c) {
-    return a*60+b*60+c;
+    return (a*60)*60+b*60+c;
 }
 let result__11 = seconds (3,20,10);
 console.log (result__11);
+
+function min (a,b) {
+    if (a > b) {
+     return b;
+      } else {
+       return  a;
+      }
+}
+let showRes = min (1,1);
+console.log (showRes);
+
+function pow (a,b) {
+    if (b<1){
+        console.log ('error')
+    } else {
+        return a**b;
+    }
+}
+let res1101 = pow (3,-5);
+console.log (res1101);
