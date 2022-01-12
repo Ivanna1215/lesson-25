@@ -84,13 +84,21 @@ else if (sec=>60) {
     let min = Math.floor (sec/60);
     return `Your time 00:${min}:${sec-min*60}`;
 }
-else if (sec<=0){
-    return "error";
+else if (sec<=0) {
+    return `error`;
 }
 
 else if (sec<60) {
     return `Your time 00:00:${sec}`
 }
 }
-let res2228 = getTime (155)
+let res2228 = getTime (15000)
 console.log (res2228);
+
+let name;
+function getName () {
+    let name = 'Ira';
+console.log (name);
+}
+// console.log (name);
+getName ();
