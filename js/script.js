@@ -102,3 +102,30 @@ console.log (name);
 }
 // console.log (name);
 getName ();
+
+function calcSumm (numOne,numTwo,more,less){
+    let numSumm = numOne+numTwo;
+    if (numSumm>3) {
+        more ();
+    } else {
+        less();
+    }
+}
+function showMoreMessage () {
+    console.log ('more than 3');
+}
+function showLessMessage () {
+    console.log ('less than 3');
+}
+calcSumm (0,10,showMoreMessage,showLessMessage);
+
+function getResult1301 (numOne,numTwo) {
+    // піднесення до степеня
+    let result=1;
+    // множимо result на numOne numTwo раз в циклі
+    for (let i = 0; i<numTwo;i++) {
+        result*=numOne;
+    }
+    return result;
+}
+console.log (getResult1301(5,3));
