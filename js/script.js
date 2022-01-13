@@ -103,21 +103,24 @@ console.log (name);
 // console.log (name);
 getName ();
 
-function calcSumm (numOne,numTwo,more,less){
-    let numSumm = numOne+numTwo;
-    if (numSumm>3) {
-        more ();
-    } else {
-        less();
-    }
-}
-function showMoreMessage () {
-    console.log ('more than 3');
-}
-function showLessMessage () {
-    console.log ('less than 3');
-}
-calcSumm (0,10,showMoreMessage,showLessMessage);
+// function calcSumm (numOne,numTwo,more,less){
+//     let numSumm = numOne+numTwo;
+//     if (numSumm>3) {
+//         more ();
+//     } else {
+//         less();
+//     }
+// }
+// // function showMoreMessage () {
+// //     console.log ('more than 3');
+// // }
+
+// function showLessMessage () {
+//     console.log ('less than 3');
+//     }
+
+ 
+// calcSumm (0,10,showMoreMessage,showLessMessage);
 
 function getResult1301 (numOne,numTwo) {
     // піднесення до степеня
@@ -129,3 +132,77 @@ function getResult1301 (numOne,numTwo) {
     return result;
 }
 console.log (getResult1301(5,3));
+
+function calcSummTwo (numOneOne,numTwoTwo) {
+if (numTwoTwo===1) {
+    return numOneOne;
+} else {
+    return numOneOne * calcSummTwo (numOneOne,numTwoTwo-1);
+}
+}
+console.log (calcSummTwo(8,3))
+
+// Function Expression Функціональне виражение
+function getSumm () {
+    let summ = 1+2;
+    console.log (summ);
+}
+let someVar = getSumm;
+// визиваємо функцію двома способами
+someVar ();
+getSumm ();
+// функціональний вираз може викликати функцію тільки після її створення;
+// Для того щоб викликати функцію з будь-якого місця програми :
+let get1301Summ;
+if (2>1) {
+    get1301Summ = function () {
+        let summ = 101+2;
+        console.log (summ);
+    }
+}
+get1301Summ ();
+// Односторокова arrow functions 
+let getMessage1301 = (text,name)=>text + ',' + name +  '!';
+console.log (getMessage1301('Hello','Ivanna'));
+
+let getMessage2118 = (text,name)=>text + ' '+ '11' + ' '+ name + '!';
+console.log (getMessage2118('My','num'));
+
+// Багатострокова функція 
+
+let getMessage = (text,name) => {
+    let message = text + ',' + name + '!';
+    return message;
+};
+console.log (getMessage ('Hello','Volodymyr'));
+
+function showNumber (num) {
+    console.log (num);
+    if (num<10) {
+        setTimeout (showNumber,1000,++num);
+    }
+   
+}
+setTimeout (showNumber,1000,1);
+
+// setTimeout (showMoreMessage,3000);
+// setInterval(showMoreMessage,500);
+
+let task4Freelancer;
+if (2>1) {
+    task4Freelancer = function () {
+        let summ = 1+2;
+console.log (summ);
+    }
+}
+task4Freelancer ();
+
+
+// let get1301Summ;
+// if (2>1) {
+//     get1301Summ = function () {
+//         let summ = 1+2;
+//         console.log (summ);
+//     }
+// }
+// get1301Summ (50,65);
