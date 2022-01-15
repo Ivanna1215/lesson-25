@@ -71,29 +71,7 @@ function pow (a,b) {
 let res1101 = pow (1,5);
 console.log (res1101);
 
-function getTime (sec) {
-    if (sec=>3600) {
-        let hour = Math.floor (sec/3600);
-        let hour_sec = hour*3600;
-        let min =Math.floor ((sec-hour_sec)/60);
-        let min_sec = min*60;
-        let s = sec - hour_sec-min_sec;
-        return `Your time ${hour}:${min}:${s}`;
-    }
-else if (sec=>60) {
-    let min = Math.floor (sec/60);
-    return `Your time 00:${min}:${sec-min*60}`;
-}
-else if (sec<=0) {
-    return `error`;
-}
 
-else if (sec<60) {
-    return `Your time 00:00:${sec}`
-}
-}
-let res2228 = getTime (15000)
-console.log (res2228);
 
 let name;
 function getName () {
@@ -178,7 +156,7 @@ console.log (getMessage ('Hello','Volodymyr'));
 
 function showNumber (num) {
     console.log (num);
-    if (num<10) {
+    if (num<3) {
         setTimeout (showNumber,1000,++num);
     }
    
@@ -206,3 +184,98 @@ task4Freelancer ();
 //     }
 // }
 // get1301Summ (50,65);
+
+
+// function ask(question,yes,no) {
+//     if (confirm(question)) yes()
+//     else no();
+// }
+//     ask (
+//         'Do you agree?',
+//         function() {alert ('You agreed')},
+//         function() {alert ('You did not agree')}
+//     );
+
+function getTime (sec) {
+    let  day,hour,min, hour_sec, min_sec,s;
+    if (sec < 0) {
+        return 'Error'
+    } else if (sec ===0) {
+        return 'Error000'
+    }
+else if (sec<60) {
+    hour ='00';
+    min= '00';
+    s = sec;
+    return `Your time ${hour}:${min}:${s}`;
+} else if (sec===60) {
+    hour ='00';
+    min = '01';
+    s = '00';
+    return `Your time ${hour}:${min}:${s}`;
+} else if (sec>60 && sec <3600) {
+    hour ='00';
+    min = Math.floor (sec / 60);
+    if (min<10) {
+        min = '0'+ min;
+    }
+    s = sec - (min*60);
+    return `Your time ${hour}:${min}:${s}`;
+} else if (sec===3600) {
+    hour='01';
+    min = '00';
+    s = '00';
+    return `Your time ${hour}:${min}:${s}`;
+} else if (sec>3600 && sec<86400) {
+         hour = Math.floor (sec/3600);
+         if (hour<10) {
+            hour = '0'+ hour;
+        }
+         hour_sec = hour*3600;
+         min =Math.floor ((sec-hour_sec)/60);
+         if (min<10) {
+            min = '0'+ min;
+        }
+         min_sec = min*60;
+         s = sec - hour_sec-min_sec;
+         if (s<10) {
+            s = '0'+ s;
+        }
+        return `Your time ${hour}:${min}:${s}`;
+    }
+    else if (sec=86400) {
+day = '01';
+hour = '00';
+min = '00';
+s = '00';
+return `Your time ${day} day ${hour}:${min}:${s}`;
+    }
+    else if (sec>86400) {
+        day = Math.floor (sec/86400);
+        if (day<10) {
+            day = '0'+ day;
+        }
+        hour = Math.floor (sec/3600);
+        if (hour<10) {
+           hour = '0'+ hour;
+       }
+        hour_sec = hour*3600;
+        min =Math.floor ((sec-hour_sec)/60);
+        if (min<10) {
+           min = '0'+ min;
+       }
+        min_sec = min*60;
+        s = sec - hour_sec-min_sec;
+        if (s<10) {
+           s = '0'+ s;
+        return `Your time ${day} day ${hour}:${min}:${s}`;
+            }
+}
+}
+let res2228 = getTime (6000);
+console.log (res2228);
+
+
+
+
+
